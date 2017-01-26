@@ -1,8 +1,26 @@
 /*Text*/
-.title{
+.title {
+	color: #4A4ACD;
+	text-align: center;
+	font-size: 5.0rem;
+	opacity: 0%;
+}
+
+a {
 	color: #4A4ACD;
 }
 
-a{
-	color: #4A4ACD;
+/* background */
+.parallax { 
+    /* The image used */
+    background-image: url("/img/IMG_2246.JPG");
+
+    /* Set a specific height */
+    height: 750px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
