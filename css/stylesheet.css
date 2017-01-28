@@ -1,62 +1,125 @@
 /*Text*/
-.title {
-	text-align: center;
-	font-size: 7.0rem;
-	margin-bottom: 7rem;
-	margin-top: 2rem;
+.title
+{
+    font-size: 7.0rem;
+
+    margin-top: 2rem;
+    margin-bottom: 7rem;
+
+    text-align: center;
 }
 
-a {
-	color: #4A4ACD;
+a
+{
+    transition: .3s;
+
+    color: #4a4acd;
+}
+
+.hidden
+{
+    color: #fff;
 }
 
 /* navigation */
-.navbar {
-	list-style: none;
-	margin: 0;
-	margin-top: -7rem;
-	padding:0;
-	overflow: hidden;
-	display:block;
-	width: 100%;
+.navbar
+{
+    display: inline-block;
+    overflow: hidden;
+
+    width: 100%;
+    margin: 0;
+    margin-top: -7rem;
+    padding: 0;
+
+    list-style: none;
 }
 
-.navbar li {
-	display: inline-block;
-	text-decoration: none;
+.navbar li
+{
+    display: inline-block;
+
+    text-decoration: none;
 }
 
-.navbar li a{
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-	transition: 0.3s;
-	font-size: 4.0rem;
+.navbar li a
+{
+    font-size: 4.0rem;
+
+    padding: 4rem 2rem;
+
+    text-align: center;
+    text-decoration: none;
+}
+
+.sidebar
+{
+    width: 20rem;
+    height: 100%;
+
+    background-image: url('/img/IMG_2246.JPG');
 }
 
 /*background*/
-.parallax { 
-    /*The image used*/
-    background-image: url("/img/IMG_2246.JPG");
-
+body
+{
+    background-color: #000;
+}
+.parallax
+{
     /*Set a specific height*/
-    height: 750px; 
+    height: auto!important;
+    padding: 100% 0 0;
+    /*The image used*/
 
+    background-image: url('/img/SteveH.jpg');
+    /*background-position: center;*/
+    background-repeat: no-repeat;
     /*Create the parallax scrolling effect*/
     background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-position: 50% 0;
     background-size: cover;
 }
 
-/* centering */
-.center-container {
-	float: left;
-	position: relative;
-	left: 50%;
+/* positioning */
+.center-container
+{
+    position: relative;
+    left: 50%;
+
+    float: left;
 }
-.fixer-container {
-	float: left;
-	position: relative;
-	left: -50%;
+.fixer-container
+{
+    position: relative;
+    left: -50%;
+
+    float: left;
+}
+
+.container
+{
+    position: relative;
+    z-index: 1;
+
+    overflow: auto;
+
+    margin-left: 20rem;
+}
+
+/*mobile first? probably now, decide later*/
+
+/* Larger than mobile screen */
+@media (min-width: 40.0rem)
+{
+}
+
+/* Larger than tablet screen */
+@media (min-width: 80.0rem)
+{
+}
+
+/* Larger than desktop screen */
+@media (min-width: 120.0rem)
+{
 }
