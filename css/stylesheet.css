@@ -68,8 +68,8 @@ body
 .parallax
 {
     /*Set a specific height*/
-    height: auto!important;
-    padding: 100% 0 0;
+    padding: 100vh 0 0;
+    margin: 0 auto;
     /*The image used*/
 
     background-image: url('/img/SteveH.jpg');
