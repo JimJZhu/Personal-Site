@@ -4,8 +4,7 @@
   "description": "My personal site",
   "main": "index.js",
   "dependencies": {
-    "bower": "^1.8.0",
-    "milligram": "^1.2.4"
+    "bower": "^1.8.0"
   },
   "devDependencies": {},
   "scripts": {
