@@ -3,102 +3,92 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="author" content="Jim J. Zhu">
-	<meta name="description" content="Jim Zhu's personal website.">
-	<title>Welcome to my website :)</title>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-	<link rel="stylesheet" href="node_modules/milligram/dist/milligram.css">
-	<link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
-	<link rel="stylesheet" href="css/stylesheet.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+	<title>Welcome :)</title>
+
+	<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+	<!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+        <![endif]-->
+	<!--[if gt IE 8]><!-->
+	<link rel="stylesheet" href="css/layouts/side-menu.css">
+	<!--<![endif]-->
 </head>
 
 <body>
-	<main class="wrapper">
-		<nav>
-			<div class="center-container">
-				<div class="fixer-container">
-					<a href="#title">
-						<h1 class="title">Hi, I'm Jim</h1>
-					</a>
-				</div>
-			</div>
-			<div class="center-container">
-				<div class="fixer-container">
-					<ul class="navbar">
-						<li><a href="#work">Work Experience</a></li>
-						<li><a href="#projects">Projects</a></li>
-						<li><a href="#interests">Interests</a></li>
-						<li><a href="#resume">Resume</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-		<div class="parallax"></div>
+	<div id="layout">
+		<!-- Menu toggle -->
+		<a href="#menu" id="menuLink" class="menu-link">
+			<!-- Hamburger icon -->
+			<span></span>
+		</a>
 
-		<div class="container">
-			<section class="centered" name="work">
-				<a name="work"></a>
-				<ul>
-					<h2>Work Experience</h2>
-					<li>MHS</li>
-					<li>SAP</li>
+		<div id="menu">
+			<div class="pure-menu">
+				<a class="pure-menu-heading" href="#">Jim</a>
+
+				<ul class="pure-menu-list">
+					<li class="pure-menu-item">
+						<a href="#" class="pure-menu-link">Introduction</a>
+					</li>
+					<li class="pure-menu-item">
+						<a href="#" class="pure-menu-link">Work Experience</a>
+					</li>
+					<li class="pure-menu-item">
+						<a href="#" class="pure-menu-link">Projects</a>
+					</li>
+					<li class="pure-menu-item">
+						<a href="#" class="pure-menu-link">Interests</a>
+					</li>
+					<li class="pure-menu-item">
+						<a href="#" class="pure-menu-link">Resume</a>
+					</li>
+					<li class="pure-menu-item">
+						<a href="#" class="pure-menu-link">Contact</a>
+					</li>
+					<li class="pure-menu-item">
+						<a href="#" class="pure-menu-link">Bonus Section</a>
+					</li>
 				</ul>
-			</section>
-			<section class="centered">
-				<a name="projects"></a>
-				<ul>
-					<h2>Projects</h2>
-					<li>1</li>
-					<li>2</li>
-					<li>3</li>
-					<li>4</li>
-					<li>5</li>
-				</ul>
-			</section>
-			<section class="centered" name="interests">
-				<a name="interests"></a>
-				<ul>
-					<h2>Interests</h2>
-					<li>1</li>
-					<li>2</li>
-					<li>3</li>
-					<li>4</li>
-					<li>5</li>
-				</ul>
-			</section>
-			<section class="centered" name="resume">
-				<a name="resume"></a>
-				<ul>
-					<h2>Resume</h2>
-					<li>1</li>
-					<li>2</li>
-					<li>3</li>
-					<li>4</li>
-					<li>5</li>
-				</ul>
-			</section>
-			<section class="centered" name="contact">
-				<a name="contact"></a>
-				<ul>
-					<h2>"Contact</h2>
-					<li>1</li>
-					<li>2</li>
-					<li>3</li>
-					<li>4</li>
-					<li>5</li>
-				</ul>
-			</section>
-			<footer class="footer">
-				<section class="">
-					<p>I'm Jim</p>
-				</section>
-			</footer>
+			</div>
 		</div>
 
-	</main>
-	<script src="main.js"></script>
+		<div id="main">
+			<div class="header">
+				<h1>Welcome To My Website</h1>
+				<h2>2A Computer Engineering Student</h2>
+			</div>
+
+			<div class="content">
+				<h2 class="content-subhead">Introduction</h2>
+				<p> My name is jim. My favourite colour is brownish-green. I am 175 cm tall. 
+				</p>
+				<h2 class="content-subhead">Work Experience</h2>
+				<p>MHS, then SAP
+				</p>
+				<h2 class="content-subhead">Projects</h2>
+				<p>Later
+				</p>
+				<h2 class="content-subhead">Interests</h2>
+				<p>I like fish. 
+				</p>
+				<h2 class="content-subhead">Resume</h2>
+				<p>work work work
+				</p>
+				<h2 class="content-subhead">Contact</h2>
+				<p>jim.jiaming.zhu@gmail.com
+				</p>
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<script src="js/ui.js"></script>
+
 </body>
 
 </html>
