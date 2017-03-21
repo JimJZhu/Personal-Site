@@ -1,0 +1,5 @@
+/*for my links*/
+.social:visited {color:#191818;}  /* visited link */
+.social:hover {color:#1F8DD6;}  /* mouse over link */
+.social:active {color:#191818;}  /* selected link */
+.social {color:#191818;}  /* selected link */
