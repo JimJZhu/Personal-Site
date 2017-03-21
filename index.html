@@ -6,14 +6,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
 	<title>Welcome :)</title>
-
-	<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">	
 	<!--[if lte IE 8]>
-            <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
-        <![endif]-->
+		<link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+		<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-old-ie-min.css">
+	<![endif]-->
 	<!--[if gt IE 8]><!-->
-	<link rel="stylesheet" href="css/layouts/side-menu.css">
+		<link rel="stylesheet" href="css/layouts/side-menu.css">
+	    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
 	<!--<![endif]-->
+	<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/base-min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/stylesheet.css">
 </head>
 
 <body>
@@ -29,9 +33,6 @@
 				<a class="pure-menu-heading" href="#">Jim</a>
 
 				<ul class="pure-menu-list">
-					<li class="pure-menu-item">
-						<a href="#" class="pure-menu-link">Introduction</a>
-					</li>
 					<li class="pure-menu-item">
 						<a href="#" class="pure-menu-link">Work Experience</a>
 					</li>
@@ -56,31 +57,44 @@
 
 		<div id="main">
 			<div class="header">
-				<h1>Welcome To My Website</h1>
-				<h2>2A Computer Engineering Student</h2>
+				<h1>Jim Zhu</h1>
+				<h2>University of Waterloo Computer Engineering Student</h2>
+				<div class="pure-g">
+					<div class="pure-u-lg-1-3 pure-u-1-12"></div>
+					<div class="pure-u-lg-1-12 pure-u-5-24"><a class="social" href="https://github.com/JimJZhu"><i class="fa fa-github fa-2x"></i></a></div>
+					<div class="pure-u-lg-1-12 pure-u-5-24"><a class="social" href="https://www.linkedin.com/in/jim-zhu-a881b6128"><i class="fa fa-linkedin fa-2x"></i></a></div>
+					<div class="pure-u-lg-1-12 pure-u-5-24"><a class="social" href="http://steamcommunity.com/profiles/76561198044263537"><i class="fa fa-steam fa-2x"></i></a></div>	
+					<div class="pure-u-lg-1-12 pure-u-5-24"><a class="social" href="mailto:jimjiamingzhu@gmail.com"><i class="fa fa-envelope fa-2x"></i></a></div>
+					<div class="pure-u-lg-1-3 pure-u-1-12"></div>
+				</div>
 			</div>
 
 			<div class="content">
-				<h2 class="content-subhead">Introduction</h2>
-				<p> My name is jim. My favourite colour is brownish-green. I am 175 cm tall. 
-				</p>
 				<h2 class="content-subhead">Work Experience</h2>
-				<p>MHS, then SAP
+				<h3>SAP</h3>
+				<h5>Toronto, Ontario</h5>
+				<p>
+				</p>
+				<h3>MHS</h3>
+				<p>
 				</p>
 				<h2 class="content-subhead">Projects</h2>
 				<p>Later
 				</p>
 				<h2 class="content-subhead">Interests</h2>
-				<p>I like fish. 
+				<p>I like fishing. I can also ride bikes.
 				</p>
 				<h2 class="content-subhead">Resume</h2>
-				<p>work work work
+				<p><a href="Files/Resume.pdf" target="_blank">Here is a PDF.</a> I'll make some fancy html version later.
 				</p>
-				<h2 class="content-subhead">Contact</h2>
-				<p>jim.jiaming.zhu@gmail.com
-				</p>
-
+				<div class="contact">
+					<h2 class="content-subhead">Contact</h2>
+					<p>This is my email => jim.jiaming.zhu@gmail.com
+					</p>
+				</div>
 			</div>
+		</div>
+		<div id="footer" class="footer">
 		</div>
 	</div>
 
