@@ -4,6 +4,24 @@
 .social:active {color:#191818;}  /* selected link */
 .social {color:#191818;}  /* selected link */
 
+.job-container{
+    margin:0em 0em 0em 0em;
+    padding:0em 0em 0em 0em;
+}
+
+.job-container > h3 {
+    margin:0em 0em 0em 0em;
+    padding:0em 0em 0em 0em;
+    font-weight: 530;
+    font-size: 1.2em;
+}
+.job-container > h4 {
+    margin:0em 0em 0em 0em;
+    padding:0em 0em 0em 0em;
+    font-weight: 300;
+    font-size: 1em;
+}
+
 .contact{
     /*background-color: #cccccc;*/
 }
