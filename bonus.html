@@ -33,6 +33,14 @@
             margin: 0;
             padding: 0;
             position: absolute;
+            color: red;
+            -webkit-animation-name: trippy-title;
+            /* Safari 4.0 - 8.0 */
+            -webkit-animation-duration: 1.056338028s;
+            /* Safari 4.0 - 8.0 */
+            animation-name: trippy-title;
+            animation-duration: 1.056338028s;
+            animation-iteration-count: infinite;
         }
         
         .parallax {
@@ -51,11 +59,65 @@
             color: red;
             -webkit-animation-name: trippy;
             /* Safari 4.0 - 8.0 */
-            -webkit-animation-duration: 1s;
+            -webkit-animation-duration: 1.056338028s;
             /* Safari 4.0 - 8.0 */
             animation-name: trippy;
-            animation-duration: 1s;
+            animation-duration: 1.056338028s;
             animation-iteration-count: infinite;
+        }
+        /* Safari 4.0 - 8.0 */
+        
+        @-webkit-keyframes trippy-title {
+            0% {
+                background-color: red;
+                color: green;
+            }
+            25% {
+                background-color: black;
+                color: gray;
+            }
+            50% {
+                background-color: yellow;
+                color: white;
+            }
+            75% {
+                background-color: blue;
+                color: violet;
+            }
+            100% {
+                background-color: red;
+                color: green;
+                transform: rotate(360deg);
+            }
+        }
+        /* Not Safari 4.0 - 8.0 */
+        
+        @keyframes trippy-title {
+            0% {
+                background-color: red;
+                color: green;
+                transform: rotate(0deg);
+            }
+            25% {
+                background-color: black;
+                color: gray;
+                transform: rotate(90deg);
+            }
+            50% {
+                background-color: yellow;
+                color: white;
+                transform: rotate(180deg);
+            }
+            75% {
+                background-color: blue;
+                color: violet;
+                transform: rotate(270deg);
+            }
+            100% {
+                background-color: red;
+                color: green;
+                transform: rotate(360deg);
+            }
         }
         /* Safari 4.0 - 8.0 */
         
@@ -81,7 +143,7 @@
                 color: green;
             }
         }
-        /* Standard syntax */
+        /* Not Safari 4.0 - 8.0 */
         
         @keyframes trippy {
             0% {
