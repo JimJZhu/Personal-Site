@@ -1,0 +1,105 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		meta(name='description', content="Jim's personal website.")
+		title Jim's Personal Site
+		link(rel='stylesheet', href='https://unpkg.com/purecss@0.6.2/build/pure-min.css', integrity='sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD', crossorigin='anonymous')
+		link(rel='stylesheet', href='css/layouts/side-menu.css')
+		link(rel='stylesheet', href='https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css')
+		link(rel='stylesheet', href='https://unpkg.com/purecss@0.6.2/build/base-min.css')
+		link(rel='stylesheet', href='css/font-awesome.min.css')
+		link(rel='stylesheet', href='css/stylesheet.css')
+	body
+		#layout
+			// Menu toggle
+			a#menuLink.menu-link(href='#menu')
+				// Hamburger icon
+				span
+			#menu
+				.pure-menu
+					a.pure-menu-heading(href='#') Jim
+					ul.pure-menu-list
+						li.pure-menu-item
+							a.pure-menu-link(href='#Work') Work Experience
+						li.pure-menu-item
+							a.pure-menu-link(href='#Projects') Projects
+						li.pure-menu-item
+							a.pure-menu-link(href='#Interests') Interests
+						li.pure-menu-item
+							a.pure-menu-link(href='assets/Resume.pdf') Resume
+						li.pure-menu-item
+							a.pure-menu-link(href='#Contact') Contact
+						li.pure-menu-item.bonus
+							a.pure-menu-link(href='bonus.html') Bonus Section
+			#main
+				.header
+					h1 Jim Zhu
+					h2 Computer Engineering Student - University of Waterloo
+					.pure-g
+						.pure-u-lg-1-3.pure-u-1-12
+						.pure-u-lg-1-12.pure-u-5-24
+							a.social(href='https://github.com/JimJZhu')
+								i.fa.fa-github.fa-2x
+						.pure-u-lg-1-12.pure-u-5-24
+							a.social(href='https://www.linkedin.com/in/jim-zhu-a881b6128')
+								i.fa.fa-linkedin.fa-2x
+						.pure-u-lg-1-12.pure-u-5-24
+							a.social(href='http://steamcommunity.com/profiles/76561198044263537')
+								i.fa.fa-steam.fa-2x
+						.pure-u-lg-1-12.pure-u-5-24
+							a.social(href='mailto:jimjiamingzhu@gmail.com')
+								i.fa.fa-envelope.fa-2x
+						.pure-u-lg-1-3.pure-u-1-12
+				.content
+					h2#Work.content-subhead Work Experience
+					.job-container
+						h3 SAP
+						h4
+							i Software Application Developer
+							|  - Toronto, Ontario
+						ul
+							li Created a custom Java tool to analyze and stress-test OData servers
+							li Constructed robust Arduino/Raspberry Pi demo boards to facilitate product demos
+							li
+								| Demos were successfully presented at the Hannover-Messe industrial fair and SAP d-kom
+					.job-container
+						h3 MHS
+						h4
+							i Software Developer
+							|  - Toronto, Ontario
+						ul
+							li
+								| Developed RESTful APIs for the scoring and report generation of the MindQ Assessment
+							li
+								| Built the PINGS mobile app using the Ionic framework, gamifying peer-to-peer recognition
+					h2#Projects.content-subhead Projects
+					a.project-card(href='https://github.com/JimJZhu/OsuDataAggregator')
+						h3 Osu Data Aggregator
+						p A python web crawler that scrapes osu player data.
+					a.project-card(href='https://github.com/JimJZhu/Kanban')
+						h3 Kanban Task Manager
+						p A Kanban style personal task manager.
+					a.project-card(href='https://github.com/JimJZhu/J-OSU')
+						h3 J-OSU
+						p A Java port of my favourite rhythm game :)
+					h2#Interests.content-subhead Interests
+					p I like fishing. I can also ride bikes and lift sometimes.
+					p Add me on steam, I will play games with you.
+					h2#Contact.content-subhead Contact
+					p
+						| My email is jim.jiaming.zhu@gmail.com. Feel free to use the form below to send me an email.
+					p You can call me as well => (647)-865-4188
+					.contact-container
+						form(method='POST', action='http://formspree.io/jim.jiaming.zhu@gmail.com')
+							input(type='email', name='email', placeholder='Your email')
+							input(type='text', name='name', placeholder='Your name')
+							textarea(name='message', placeholder='Your message')
+							button(type='submit') Send
+		hr
+		footer
+			p
+				| © Jim Zhu 2017 
+				i.fa.fa-smile-o
+		script(src='../js/ui.min.js')
