@@ -1,6 +1,6 @@
 {
     "name": "personal-site",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "My personal site",
     "main": "index.js",
     "dependencies": {
@@ -19,14 +19,15 @@
         "dev-setup": "lite-server -c bs-config.json",
         "dev": "lite-server",
         "copy": "cp -rf src/assets dist && cp -rf src/assets dist && cp -rf src/fonts dist && cp -f src/css/font-awesome.min.css dist/css",
-        "build-js": "mkdir -p dist/html && mkdir -p dist/js && mkdir -p dist/css && mkdir -p dist/css/layouts && pug src/index.pug -o dist/ && uglifyjs src/js/app.js -m -o dist/js/app.min.js && uglifyjs src/js/ui.js -m -o dist/js/ui.min.js && stylus src/css/stylesheet.styl -o dist/css/stylesheet.css && stylus src/css/layouts/side-menu.styl -o dist/css/layouts/side-menu.css && npm run copy",
+        "build-js": "mkdir -p dist/html && mkdir -p dist/js && mkdir -p dist/css && pug src/index.pug -o dist/ && uglifyjs src/js/app.js -m -o dist/js/app.min.js && uglifyjs src/js/ui.js -m -o dist/js/ui.min.js && stylus src/css/loader.styl -o dist/css/stylesheet.css && npm run copy",
         "clean": "rm -R dist",
         "clean-build": "npm run clean && npm run build-js",
         "lint": "jshint src/**/**.js",
-        "watch": "concurrently 'stylus -w src/css/stylesheet.styl -o dist/css/stylesheet.css' 'stylus -w src/css/layouts/side-menu.styl -o dist/css/layouts/side-menu.css' 'pug -w src/index.pug -o dist/' ",
+        "watch": "concurrently 'stylus -w src/css/loader.styl -o dist/css/stylesheet.css' 'pug -w src/index.pug -o dist/' ",
         "test": "mocha test",
         "pretest": "npm run lint",
-        "posttest": "echo the test has been run!"
+        "posttest": "echo the test has been run!",
+        "deploy": "dploy"
     },
     "repository": {
         "type": "git",
