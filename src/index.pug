@@ -6,7 +6,6 @@ html(lang='en')
 		meta(name='description', content="Jim's personal website.")
 		title Jim's Personal Site
 		link(rel='stylesheet', href='https://unpkg.com/purecss@0.6.2/build/pure-min.css', integrity='sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD', crossorigin='anonymous')
-		link(rel='stylesheet', href='css/layouts/side-menu.css')
 		link(rel='stylesheet', href='https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css')
 		link(rel='stylesheet', href='https://unpkg.com/purecss@0.6.2/build/base-min.css')
 		link(rel='stylesheet', href='css/font-awesome.min.css')
@@ -34,7 +33,9 @@ html(lang='en')
 						li.pure-menu-item.bonus
 							a.pure-menu-link(href='bonus.html') Bonus Section
 			#main
-				.header
+				.fab
+					a(href="#header").fa.fa-arrow-up.fa-4x
+				.header#header
 					h1 Jim Zhu
 					h2 Computer Engineering Student - University of Waterloo
 					.pure-g
