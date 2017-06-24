@@ -1,19 +1,38 @@
+.header
+    margin 0
+    padding-left 2rem
+    text-align center
+    border-bottom 1px solid #eee
+    height 100vh
+    background-attachment fixed
+    background-image url("../assets/Miami.jpg")
+    background-size cover
+    background-color aqua-main
+    background-position center
+    background-blend-mode screen
+    display flex
+    flex-direction column
+    justify-content center
+    h1
+        margin 0.2em 0
+        font-size 3em
+        font-weight 600
+        color text-black
+    h2
+        font-weight 300
+        color text-black
+        padding 0
+        margin-top 0
+.content
+    margin-bottom 0 !important
 .social
-    color text-black
+    color #222
     &:visited
         color text-black
     &:hover
-        color aqua-lighter
+        color aqua-main
     &:active
         color text-black
-
-.bonus
-    & > a
-        color text-black !important
-    .job-container
-        margin 0
-        padding 0
-        
 .fab
     a
         border-radius 100%
@@ -28,81 +47,147 @@
         text-decoration none
         z-index 100
 
-.project-card
-    display inline-block
-    box-shadow 0 2px 3px 0 rgba(0, 0, 0, .20)
-    margin auto
-    position relative
-    transition all .2s ease-in-out
-    padding 2rem
-    text-decoration none
-    &:hover
-        box-shadow 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)
-    & > h3
-        font-weight 530
-        font-size 1.3rem
-        color #777777
-    & > p
-        color #777777
+.about-section
+    padding 0.5rem 0 1rem 2rem
+    text-align center
+    border-bottom 1px solid #eee
+    h2
+        color text-black
+    .about-container
+        display flex
+        text-align left
+        img
+            height 10rem
+            border-radius 100%
+            float left
+        p
+            color text-gray
+            margin-left 1.5rem
+        a
+            text-decoration none
+            color text-black
 
-.job-container
-    & > h3
+.work-section
+    display block
+    padding 0.5rem 0 1rem 2rem
+    color text-black
+    text-align center
+    border-bottom 1px solid #eee
+    h2
+        color text-black
+    .job-container
+        text-align left
+        h3
+            margin 0
+            padding 0
+            font-weight 530
+            font-size 1.2rem
+            color black
+        h4
+            margin 0
+            padding 0
+            font-weight 300
+            font-size 1rem
+
+.projects-section
+    padding 0.5rem 0 1rem 2rem
+    color text-black
+    text-align center
+    border-bottom 1px solid #eee
+    .project-card
+        display inline-block
+        box-shadow 0 2px 3px 0 rgba(0, 0, 0, .20)
+        position relative
+        padding 1rem 2rem
+        text-decoration none
+        max-width 12rem
+
+        h3
+            font-weight 530
+            font-size 1.3rem
+            color #777777
+        p
+            color #777777
+    .project-card-overlay
+        position absolute
+        top 0
+        left 0
+        height 100%
+        width 100%
+        transition all .3s ease-in-out
+        background-color #333
+        opacity 0
+        color text-white
+        display flex
+        justify-content center
+        flex-direction column
+        &:hover
+            opacity 0.7
+            box-shadow 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)
+.interests-section
+    padding 0.5rem 0 1rem 2rem
+    color text-black
+    text-align center
+    background-color white
+    border-bottom 1px solid #eee
+.contact-section
+    padding 0.5rem 0 1rem 2rem
+    margin-bottom 0
+    color text-white
+    text-align center
+    background-color text-black
+    border-bottom 1px solid #333
+    p
+        text-align center
         margin 0
         padding 0
-        font-weight 530
-        font-size 1.2rem
-    & > h4
-        margin 0
-        padding 0
-        font-weight 300
-        font-size 1rem
-
-.contact-container
-    box-shadow 0 2px 3px 0 rgba(0, 0, 0, .20)
-    margin auto
-    position relative
-    transition all .2s ease-in-out
-    padding 2rem
-    text-decoration none
-    & > form
-        padding 1rem
-        // align-items center
-        *
-            display block
-            margin 0.5rem auto
-            max-width: 100%
-            width 10rem
-        @media (min-width: 415px)
+    .contact-container
+        position relative
+        transition all .2s ease-in-out
+        text-decoration none
+        form
+            // align-items center
             *
                 display block
-                margin 1rem auto
-                width 15rem
-        @media (min-width: 500px)
-            *
-                display block
-                margin 1rem auto
-                width 20rem
-        & > button
-            background-color background-gray
-            padding 0.5rem
-            border none
-            transition all .2s ease-in-out
-            &:hover
-                box-shadow 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23)
+                margin 0.5rem auto
+                max-width: 100%
+                width 10rem
+            @media (min-width: 415px)
+                *
+                    display block
+                    margin 1rem auto
+                    width 15rem
+            @media (min-width: 500px)
+                *
+                    display block
+                    margin 1rem auto
+                    width 20rem
+            button
+                background-color background-gray
+                padding 0.5rem
+                border none
+                transition all .2s ease-in-out
+                color text-black
+                &:hover
+                    background-color blue-light
+    .contact-container>form>input,
+    .contact-container>form>textarea
+        background-color background-gray
+        resize none
+        padding 0.75rem 0.5rem
+        border none
+        transition all .2s ease-in-out
 
-.contact-container>form>input,
-.contact-container>form>textarea
-    background-color background-gray
-    resize none
-    padding 0.75rem 0.5rem
-    border none
-    transition all .2s ease-in-out
-
-.contact-container>form>input:hover,
-.contact-container>form>textarea:hover
-    box-shadow 0 0 2px rgba(0, 0, 0, 0.19) inset, 0 2px 3px rgba(0, 0, 0, 0.22) inset
-    border none
+    .contact-container>form>input:hover,
+    .contact-container>form>textarea:hover
+        box-shadow 0 0 2px rgba(0, 0, 0, 0.19) inset, 0 2px 3px rgba(0, 0, 0, 0.22) inset
+        border none
+        background-color blue-light
 
 footer
-    padding 0 0 0 1rem
+    margin 0
+    padding 1rem 0 0.5rem 2rem
     text-align center
+    background-color text-black
+    p
+        margin 0
