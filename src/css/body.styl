@@ -22,9 +22,17 @@
         font-weight 300
         color text-black
         padding 0
-        margin-top 0
+        margin 0.5rem 0.5rem
+        display inline-block
+    .dash
+        opacity 0
+    @media (min-width: 620px)
+        .dash
+            opacity 1
+
 .content
     margin-bottom 0 !important
+    transition all .2s ease-in-out
 .social
     color #222
     &:visited
