@@ -1,6 +1,6 @@
 .header
-    margin 0
-    padding-left 2rem
+    margin auto
+    padding auto
     text-align center
     border-bottom 1px solid #eee
     height 100vh
@@ -47,29 +47,9 @@
         text-decoration none
         z-index 100
 
-.about-section
-    padding 0.5rem 0 1rem 2rem
-    text-align center
-    border-bottom 1px solid #eee
-    h2
-        color text-black
-    .about-container
-        display flex
-        text-align left
-        img
-            height 10rem
-            border-radius 100%
-            float left
-        p
-            color text-gray
-            margin-left 1.5rem
-        a
-            text-decoration none
-            color text-black
-
 .work-section
     display block
-    padding 0.5rem 0 1rem 2rem
+    padding 0.5rem 2rem 1rem 2rem
     color text-black
     text-align center
     border-bottom 1px solid #eee
@@ -90,7 +70,7 @@
             font-size 1rem
 
 .projects-section
-    padding 0.5rem 0 1rem 2rem
+    padding 0.5rem 2rem 1rem 2rem
     color text-black
     text-align center
     border-bottom 1px solid #eee
@@ -124,21 +104,46 @@
         &:hover
             opacity 0.7
             box-shadow 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)
-.interests-section
-    padding 0.5rem 0 1rem 2rem
-    color text-black
+.about-section
+    padding 0.5rem 2rem 1rem 2rem
     text-align center
-    background-color white
     border-bottom 1px solid #eee
+    color text-black
+    h2
+        color text-black
+    .about-container
+        display flex
+        flex-direction column
+        text-align center
+        justify-content center
+        img
+            height 10rem
+            width 10rem
+            border-radius 100%
+            margin 1rem auto
+        p
+            color text-gray
+            margin 0 1.5rem
+        a
+            text-decoration none
+            color text-black
+@media (min-width: 500px)
+    .about-container
+        flex-direction row !important
+        text-align left !important
+        justify-content center
+        img
+            margin 0 !important
+            float left
 .contact-section
-    padding 0.5rem 0 1rem 2rem
+    padding 0.5rem 2rem 1rem 2rem
     margin-bottom 0
     color text-white
     text-align center
     background-color text-black
     border-bottom 1px solid #333
     p
-        text-align center
+        text-align left
         margin 0
         padding 0
     .contact-container
@@ -186,7 +191,7 @@
 
 footer
     margin 0
-    padding 1rem 0 0.5rem 2rem
+    padding 1rem 2rem 0.5rem 2rem
     text-align center
     background-color text-black
     p
