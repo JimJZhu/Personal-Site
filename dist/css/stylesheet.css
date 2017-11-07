@@ -229,6 +229,7 @@
   padding: 0.75rem 0.5rem;
   border: none;
   transition: all 0.2s ease-in-out;
+  color: #111;
 }
 .contact-section .contact-container>form>input:hover,
 .contact-section .contact-container>form>textarea:hover {
