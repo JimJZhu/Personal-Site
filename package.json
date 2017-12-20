@@ -6,6 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "concurrently": "^3.4.0",
+    "dploy": "^1.2.0",
     "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
@@ -16,13 +17,10 @@
   },
   "scripts": {
     "dev": "lite-server -c bs-config.json",
-    "copy":
-      "cp -rf src/assets dist && cp -rf src/assets dist && cp -rf src/fonts dist && cp -f src/css/font-awesome.min.css dist/css",
-    "build":
-      "mkdir -p dist/js && mkdir -p dist/css && pug src/index.pug src/bonus.pug -o dist/ && uglifyjs src/js/app.js -m -o dist/js/app.min.js && uglifyjs src/js/ui.js -m -o dist/js/ui.min.js && stylus src/css/loader.styl -o dist/css/stylesheet.css && npm run copy",
+    "copy": "cp -rf src/assets dist && cp -rf src/assets dist && cp -rf src/fonts dist && cp -f src/css/font-awesome.min.css dist/css",
+    "build": "mkdir -p dist/js && mkdir -p dist/css && pug src/index.pug src/bonus.pug -o dist/ && uglifyjs src/js/app.js -m -o dist/js/app.min.js && uglifyjs src/js/ui.js -m -o dist/js/ui.min.js && stylus src/css/loader.styl -o dist/css/stylesheet.css && npm run copy",
     "clean": "rm -R dist",
-    "watch":
-      "concurrently 'stylus -w src/css/loader.styl -o dist/css/stylesheet.css' 'pug -w src/index.pug -o dist/' ",
+    "watch": "concurrently 'stylus -w src/css/loader.styl -o dist/css/stylesheet.css' 'pug -w src/index.pug -o dist/' ",
     "deploy": "dploy"
   },
   "repository": {
