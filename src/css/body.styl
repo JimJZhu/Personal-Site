@@ -1,46 +1,71 @@
+$keyframe-name = slide-down
+@keyframes {slide-down}
+    from 
+        margin-top 5em
+    to
+        margin-top 0.2em
+$keyframe-name = blur
+@keyframes {blur}
+  for i in 0..3
+    {10% * i}
+      filter blur(i px)
 .header
     margin auto
-    padding auto
     text-align center
     border-bottom 1px solid #eee
     height 100vh
-    background-attachment fixed
-    background-image url("../assets/Miami.jpg")
-    background-size cover
-    background-color aqua-main
-    background-position center
-    background-blend-mode screen
     display flex
     flex-direction column
     justify-content center
+    .header-image
+        background-image url('/assets/bg.jpg')
+        background-attachment fixed
+        background-size cover 
+        background-position center
+        background-color aqua-darker
+        background-blend-mode screen
+        height 100vh
+        width 100vh
+        position fixed
+        z-index -15
+        filter blur(3px)
+        animation blur 1.2s 1
     h1
         margin 0.2em 0
+        z-index: 2
         font-size 3em
         font-weight 600
-        color text-black
+        color text-white
+        animation slide-down 1.2s 1
     h2
-        font-weight 300
-        color text-black
+        font-weight 700
+        color text-white
         padding 0
         margin 0.5rem 0.5rem
+        z-index: 2
         display inline-block
     .dash
         opacity 0
-    @media (min-width: 620px)
+    @media (min-width: 665px)
         .dash
             opacity 1
-
+    p
+        font-size 0.2em
+        position fixed
+        top 80%
 .content
     margin-bottom 0 !important
     transition all .2s ease-in-out
+    z-index 2
 .social
-    color #222
+    z-index 2
+    color text-white
     &:visited
-        color text-black
+        color text-white
     &:hover
-        color aqua-main
-    &:active
         color text-black
+    &:active
+        color text-white
 .fab
     a
         border-radius 100%
@@ -63,6 +88,8 @@
     border-bottom 1px solid #eee
     max-width 750px
     margin auto
+    background-color white
+    z-index 2
     h2
         color text-black
     .job-container
@@ -84,6 +111,8 @@
     color text-black
     text-align center
     border-bottom 1px solid #eee
+    background-color white
+    z-index 2
     .project-card
         display inline-block
         box-shadow 0 2px 3px 0 rgba(0, 0, 0, .20)
@@ -121,6 +150,8 @@
     color text-black
     max-width 750px
     margin auto
+    background-color white
+    z-index 2
     h2
         color text-black
     .about-container

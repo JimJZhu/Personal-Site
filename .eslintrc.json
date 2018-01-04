@@ -8,6 +8,7 @@
     "jquery": true
   },
   "rules": {
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "no-mixed-operators": "off"
   }
 }

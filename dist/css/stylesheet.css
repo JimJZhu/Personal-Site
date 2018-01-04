@@ -1,55 +1,72 @@
 .header {
   margin: auto;
-  padding: auto;
   text-align: center;
   border-bottom: 1px solid #eee;
   height: 100vh;
-  background-attachment: fixed;
-  background-image: url("../assets/Miami.jpg");
-  background-size: cover;
-  background-color: #236863;
-  background-position: center;
-  background-blend-mode: screen;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+.header .header-image {
+  background-image: url("/assets/bg.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-color: #003430;
+  background-blend-mode: screen;
+  height: 100vh;
+  width: 100vh;
+  position: fixed;
+  z-index: -15;
+  filter: blur(3px);
+  animation: blur 1.2s 1;
+}
 .header h1 {
   margin: 0.2em 0;
+  z-index: 2;
   font-size: 3em;
   font-weight: 600;
-  color: #222;
+  color: #eee;
+  animation: slide-down 1.2s 1;
 }
 .header h2 {
-  font-weight: 300;
-  color: #222;
+  font-weight: 700;
+  color: #eee;
   padding: 0;
   margin: 0.5rem 0.5rem;
+  z-index: 2;
   display: inline-block;
 }
 .header .dash {
   opacity: 0;
 }
-@media (min-width: 620px) {
+@media (min-width: 665px) {
   .header .dash {
     opacity: 1;
   }
 }
+.header p {
+  font-size: 0.2em;
+  position: fixed;
+  top: 80%;
+}
 .content {
   margin-bottom: 0 !important;
   transition: all 0.2s ease-in-out;
+  z-index: 2;
 }
 .social {
-  color: #222;
+  z-index: 2;
+  color: #eee;
 }
 .social:visited {
-  color: #222;
+  color: #eee;
 }
 .social:hover {
-  color: #236863;
+  color: #222;
 }
 .social:active {
-  color: #222;
+  color: #eee;
 }
 .fab a {
   border-radius: 100%;
@@ -72,6 +89,8 @@
   border-bottom: 1px solid #eee;
   max-width: 750px;
   margin: auto;
+  background-color: #fff;
+  z-index: 2;
 }
 .work-section h2 {
   color: #222;
@@ -97,6 +116,8 @@
   color: #222;
   text-align: center;
   border-bottom: 1px solid #eee;
+  background-color: #fff;
+  z-index: 2;
 }
 .projects-section .project-card {
   display: inline-block;
@@ -139,6 +160,8 @@
   color: #222;
   max-width: 750px;
   margin: auto;
+  background-color: #fff;
+  z-index: 2;
 }
 .about-section h2 {
   color: #222;
@@ -234,6 +257,94 @@ footer {
 }
 footer p {
   margin: 0;
+}
+@-moz-keyframes slide-down {
+  from {
+    margin-top: 5em;
+  }
+  to {
+    margin-top: 0.2em;
+  }
+}
+@-webkit-keyframes slide-down {
+  from {
+    margin-top: 5em;
+  }
+  to {
+    margin-top: 0.2em;
+  }
+}
+@-o-keyframes slide-down {
+  from {
+    margin-top: 5em;
+  }
+  to {
+    margin-top: 0.2em;
+  }
+}
+@keyframes slide-down {
+  from {
+    margin-top: 5em;
+  }
+  to {
+    margin-top: 0.2em;
+  }
+}
+@-moz-keyframes blur {
+  0% {
+    filter: blur(0px);
+  }
+  10% {
+    filter: blur(1px);
+  }
+  20% {
+    filter: blur(2px);
+  }
+  30% {
+    filter: blur(3px);
+  }
+}
+@-webkit-keyframes blur {
+  0% {
+    filter: blur(0px);
+  }
+  10% {
+    filter: blur(1px);
+  }
+  20% {
+    filter: blur(2px);
+  }
+  30% {
+    filter: blur(3px);
+  }
+}
+@-o-keyframes blur {
+  0% {
+    filter: blur(0px);
+  }
+  10% {
+    filter: blur(1px);
+  }
+  20% {
+    filter: blur(2px);
+  }
+  30% {
+    filter: blur(3px);
+  }
+}
+@keyframes blur {
+  0% {
+    filter: blur(0px);
+  }
+  10% {
+    filter: blur(1px);
+  }
+  20% {
+    filter: blur(2px);
+  }
+  30% {
+    filter: blur(3px);
+  }
 }
 body {
   color: #777;
@@ -354,7 +465,7 @@ body {
 .bonus > a {
   color: #eee !important;
 }
-@media (min-width: 48em) {
+@media (min-width: 815px) {
   #layout {
     padding-left: 150px;
     left: 0;
