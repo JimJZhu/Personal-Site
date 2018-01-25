@@ -12,85 +12,57 @@ html(lang='en')
 		link(rel='stylesheet', href='css/stylesheet.css')
 	body
 		#layout
-			// Menu toggle
-			a#menuLink.menu-link(href='#menu')
-				// Hamburger icon
-				span
-			#menu(scroll="false")
-				.pure-menu
-					a.pure-menu-heading(href='#Header') Jim
-					ul.pure-menu-list
-						li.pure-menu-item
-							a.pure-menu-link(href='#Work') Work Experience
-						li.pure-menu-item
-							a.pure-menu-link(href='#Projects') Projects
-						li.pure-menu-item
-							a.pure-menu-link(href='#About') About Me
-						li.pure-menu-item
-							a.pure-menu-link(href='assets/Resume.pdf') Resume
-						li.pure-menu-item
-							a.pure-menu-link(href='#Contact') Contact
-						li.pure-menu-item.bonus
-							a.pure-menu-link(href='bonus.html') Bonus Section
 			#main
-				.fab
-					a(href="#Header").fa.fa-arrow-up.fa-3x
-				.header#Header
-					.header-image
-					h1 Jim Zhu
+				.header
+					h1
+						a(href='#Top') Jim Zhu
 					.title
-						h2 Computer Engineering Student
+						h2 3A Computer Engineering Student
 						h2.dash -
 						h2 University of Waterloo
-					.pure-g
+
+					ul.pure-g
 						.pure-u-lg-1-3.pure-u-1-12
-						.pure-u-lg-1-12.pure-u-5-24
-							a.social(href='https://github.com/JimJZhu')
-								i.fa.fa-github.fa-2x
-						.pure-u-lg-1-12.pure-u-5-24
-							a.social(href='https://www.linkedin.com/in/jim-zhu-a881b6128')
-								i.fa.fa-linkedin.fa-2x
-						.pure-u-lg-1-12.pure-u-5-24
-							a.social(href='http://steamcommunity.com/profiles/76561198044263537')
-								i.fa.fa-steam.fa-2x
-						.pure-u-lg-1-12.pure-u-5-24
-							a.social(href='#Contact')
-								i.fa.fa-envelope.fa-2x
+						li.pure-u-lg-1-12.pure-u-5-24
+							a(href='#Work') Work
+						li.pure-u-lg-1-12.pure-u-5-24
+							a(href='#Projects') Projects
+						li.pure-u-lg-1-12.pure-u-5-24
+							a(href='#About') About
+						li.pure-u-lg-1-12.pure-u-5-24
+							a(href='#Contact') Contact
 						.pure-u-lg-1-3.pure-u-1-12
-				.content
+							
+				.content#Top
 					.work-section#Work
 						h2 Work Experience
 						.job-container
-							h3 Hubdoc
+							h3 Hubdoc - Software Developer
 							h4
-								i Software Developer 
-								|  - Toronto, Ontario
+								i Sept. 2017 - Dec. 2017 | Toronto, Ontario
 							ul
-								li Still working here. TBD.
+								li Worked on 100+ document fetching scripts in Node.js, Phantom.js, and Nightmare.js, increasing the fleet’s overall reliability from 59% to 83%
+								li Developed an analytics dashboard using Backbone.js, C3, Express, and PostgreSQL, providing insightful metrics and data visualizations for the company’s business and development team
 						.job-container
-							h3 SAP
+							h3 SAP - Software Application Developer
 							h4
-								i Software Application Developer 
-								|  - Toronto, Ontario
+								i Jan. 2017 - Apr. 2017 | Toronto, Ontario
 							ul
+								li Constructed robust IoT demo boards for SAP’s new Leonardo Edge Services, presented at SAP’s DKom and the Hannover-Messe industrial fair for over a hundred thousand viewers
 								li Created a custom Java tool to analyze and debug OData servers
-								li Constructed robust Arduino and Raspberry Pi prototypes to facilitate product demos
-								li
-									| Demos were successfully presented at the Hannover-Messe industrial fair and SAP d-kom
 						.job-container
-							h3 MHS
+							h3 MHS - Software Developer
 							h4
-								i Software Developer
-								|  - Toronto, Ontario
+								i May 2016 - Aug. 2017 | Toronto, Ontario
 							ul
 								li
-									| Developed RESTful APIs for the scoring and report generation of the MindQ Assessment
+									| Optimized database accesses between C# and SQL Server for the company’s assessment scoring algorithm, improving maintainability and increasing speed by factors of thousands
 								li
-									| Built the PINGS mobile app using the Ionic framework, gamifying peer-to-peer recognition
+									| Built an internal peer nomination and metrics app from scratch using Cordova and Firebase, giving employees and managers additional insight to performance based success and wellness indicators
 					.projects-section#Projects
 						h2 Projects
 						a.project-card(href='https://github.com/JimJZhu/HackTheSix')
-							h3 Investermate
+							h3 Investormate
 							p A personal investment assistant.
 							.project-card-overlay.fa.fa-github-alt.fa-3x
 						a.project-card(href='https://github.com/JimJZhu/OsuDataAggregator')
@@ -118,25 +90,37 @@ html(lang='en')
 						.about-container
 							img(src="/assets/me.jpg")
 							p 
-								| I am a 2nd year Computer Engineering student at the University of Waterloo with a deep interest in automation and artificial intelligence.
+								| I am a 3rd year Computer Engineering student at the University of Waterloo with a deep interest in automation and artificial intelligence.
 								| During my free time, I enjoy tinkering with hardware and coding up tools to automate my own life. 
 								| Some of my other hobbies include fishing, cycling, weight-lifting, basketball, and curling.
 								| I also play a lot of Monster Hunter and various rhythm games, like 
 								a(href="https://osu.ppy.sh/u/2594079") this one. 
 					.contact-section#Contact
 						h2 Contact Me
-						p Email: jim.jiaming.zhu@gmail.com
-						p Cell: (647) 865-4188
-						br
-						p Or you can use this convienent form below ;)
 						.contact-container
 							form(method='POST', action='http://formspree.io/jim.jiaming.zhu@gmail.com')
 								input(type='email', name='email', placeholder='Your email')
 								input(type='text', name='name', placeholder='Your name')
 								textarea(name='message', placeholder='Your message')
 								button(type='submit') Send
+						br
+						.pure-g
+							.pure-u-lg-1-3.pure-u-1-12
+							.pure-u-lg-1-12.pure-u-5-24
+								a.social(href='https://github.com/JimJZhu')
+									i.fa.fa-github.fa-2x
+							.pure-u-lg-1-12.pure-u-5-24
+								a.social(href='https://www.linkedin.com/in/jim-zhu-a881b6128')
+									i.fa.fa-linkedin.fa-2x
+							.pure-u-lg-1-12.pure-u-5-24
+								a.social(href='http://steamcommunity.com/profiles/76561198044263537')
+									i.fa.fa-steam.fa-2x
+							.pure-u-lg-1-12.pure-u-5-24
+								a.social(href='mailto:jim.jiaming.zhu@gmail.com')
+									i.fa.fa-envelope.fa-2x
+							.pure-u-lg-1-3.pure-u-1-12
 				footer
-					p © Jim Zhu 2017 
+					p © Jim Zhu 2018 
 						i.fa.fa-smile-o
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
 		script(src='../js/ui.min.js')
