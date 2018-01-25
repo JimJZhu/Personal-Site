@@ -1,6 +1,6 @@
 $(document).ready(() => {
   // Add smooth scrolling to all links
-  $('li a').on('click', (event) => {
+  $('#Menu a').on('click', (event) => {
     // Make sure this.hash has a value before overriding default behavior
     if (event.target.hash !== '') {
       // Prevent default anchor click behavior
