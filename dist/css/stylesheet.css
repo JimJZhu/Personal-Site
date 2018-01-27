@@ -192,6 +192,20 @@ body {
   opacity: 0.8;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
+.projects-section .secret {
+  box-shadow: none;
+}
+.projects-section .secret h3 {
+  color: #222;
+}
+.projects-section .secret:hover {
+  opacity: 0.3;
+  box-shadow: none;
+}
+.projects-section .secret:hover h3 {
+  color: #eee;
+  opacity: 1;
+}
 .about-section {
   padding: 8rem 2rem 1rem 2rem;
   margin-bottom: -6rem;
