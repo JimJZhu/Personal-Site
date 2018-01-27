@@ -4,7 +4,8 @@
   "description": "My personal site",
   "main": "dist/index.html",
   "dependencies": {
-    "national-geographic-api": "^1.4.0"
+    "national-geographic-api": "^1.4.0",
+    "phaser": "^2.6.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -28,10 +29,10 @@
     "copy":
       "cp -rf src/assets dist && cp -rf src/fonts dist && cp -f src/css/font-awesome.min.css dist/css",
     "build":
-      "mkdir -p dist/js && mkdir -p dist/css && pug src/index.pug src/bonus.pug -o dist/ && babel src/js/ui.js -o dist/js/ui.min.js && browserify src/js/app.js -o dist/js/app.min.js -t babelify && stylus src/css/loader.styl -o dist/css/stylesheet.css && npm run copy",
+      "mkdir -p dist/js && mkdir -p dist/css && pug src/index.pug src/bonus.pug -o dist/ && babel src/js/ui.js -o dist/js/ui.min.js && browserify src/js/app.js -o dist/js/app.min.js -t babelify && browserify src/js/bonus.js -o dist/js/bonus.min.js -t babelify && stylus src/css/loader.styl -o dist/css/stylesheet.css && npm run copy",
     "clean": "rm -R dist",
     "watch":
-      "concurrently 'stylus -w src/css/loader.styl -o dist/css/stylesheet.css' 'pug -w src/index.pug -o dist/' 'babel src/js/ui.js -w -o dist/js/ui.min.js' 'watchify src/js/app.js -t babelify -o dist/js/app.min.js'",
+      "concurrently 'stylus -w src/css/loader.styl -o dist/css/stylesheet.css' 'pug -w src/index.pug -o dist/' 'pug -w src/bonus.pug -o dist/' 'babel src/js/ui.js -w -o dist/js/ui.min.js' 'watchify src/js/app.js -t babelify -o dist/js/app.min.js' 'watchify src/js/bonus.js -t babelify -o dist/js/bonus.min.js'",
     "deploy": "dploy"
   },
   "babel": {

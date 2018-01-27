@@ -9,6 +9,7 @@
   },
   "rules": {
     "no-param-reassign": "off",
-    "no-mixed-operators": "off"
+    "no-mixed-operators": "off",
+    "no-use-before-define": "off"
   }
 }

@@ -20,7 +20,7 @@ $(document).ready(() => {
           window.location.hash = docHash;
         },
       );
-    } // End if
+    }
   });
 });
 
