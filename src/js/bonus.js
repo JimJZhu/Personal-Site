@@ -57,7 +57,7 @@ function create() {
     note.name = i;
     note.body.velocity.x = 0;
     note.body.velocity.y = 1300;
-    note.body.setSize(60, 5, 0, 0);
+    note.body.setSize(60, 20, 0, -15);
   }
   keys = game.add.group();
   keys.enableBody = true;
@@ -66,6 +66,7 @@ function create() {
     keyArr[i] = keys.create(60 + i * 70, 500, 'middleh');
     keyArr[i].scale.setTo(0.9, 1);
     keyArr[i].alpha = 0;
+    keyArr[i].body.setSize(5, 30, 20, 0);
   }
 }
 
@@ -98,7 +99,8 @@ function update() {
 }
 
 function render() {
-  notes.forEach(game.debug.body, game.debug, true, 'green', true);
+  //   notes.forEach(game.debug.body, game.debug, true, 'green', true);
+  //   keys.forEach(game.debug.body, game.debug, true, 'green', true);
 }
 
 function collisionHandler(note, key) {
