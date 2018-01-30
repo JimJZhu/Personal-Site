@@ -1,8 +1,30 @@
+const acc = document.getElementsByClassName('accordion');
+$(document).ready(() => {
+  let i;
+  for (i = 0; i < acc.length; i += 1) {
+    acc[i].addEventListener('click', function () {
+      /* Toggle between adding and removing the "active" class,
+          to highlight the button that controls the panel */
+
+      this.classList.toggle('active');
+      /* Toggle between hiding and showing the active panel */
+      const panel = this.children[0];
+      if (panel.style.display === 'block') {
+        panel.style.setProperty('display', 'none');
+        game.paused = true;
+      } else {
+        panel.style.setProperty('display', 'block', 'important');
+        game.paused = true;
+      }
+    });
+  }
+});
+
 window.PIXI = require('phaser/build/custom/pixi');
 window.p2 = require('phaser/build/custom/p2');
 window.Phaser = require('phaser/build/custom/phaser-split');
 
-const game = new window.Phaser.Game(800, 600, window.Phaser.CANVAS, 'rhythm', {
+const game = new window.Phaser.Game(800, 600, window.Phaser.CANVAS, 'Mania', {
   preload,
   create,
   update,
@@ -36,7 +58,7 @@ function create() {
   game.add.tileSprite(0, 0, 1000, 600, 'background');
   // Music
   music = game.add.audio('music');
-  music.play();
+  // music.play();
   //  The score
   score = 0;
   scoreString = 'Score : ';
@@ -112,21 +134,4 @@ function collisionHandler(note, key) {
   //  Increase the score
   score += 20;
   scoreText.text = scoreString + score;
-
-  //   //  And create an explosion :)
-  //   const explosion = explosions.getFirstExists(false);
-  //   explosion.reset(alien.body.x, alien.body.y);
-  //   explosion.play('kaboom', 30, false, true);
-
-  //   if (aliens.countLiving() == 0) {
-  //     score += 1000;
-  //     scoreText.text = scoreString + score;
-
-  //     enemyBullets.callAll('kill', this);
-  //     stateText.text = ' You Won, \n Click to restart';
-  //     stateText.visible = true;
-
-  //     // the "click to restart" handler
-  //     game.input.onTap.addOnce(restart, this);
-  //   }
 }
