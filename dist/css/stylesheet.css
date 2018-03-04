@@ -399,6 +399,10 @@ footer p {
     filter: blur(3px);
   }
 }
+.content {
+  margin: 2rem;
+  padding: auto;
+}
 .accordion {
   background-color: #eee;
   color: #444;
