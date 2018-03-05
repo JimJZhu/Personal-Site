@@ -1,29 +1,13 @@
-const acc = document.getElementsByClassName('accordion');
 const request = require('browser-request');
 
-$(document).ready(() => {
-  let i;
-  for (i = 0; i < acc.length; i += 1) {
-    acc[i].addEventListener('click', function () {
-      /* Toggle between adding and removing the "active" class,
-          to highlight the button that controls the panel */
-      this.classList.toggle('active');
-      /* Toggle between hiding and showing the active panel */
-      const panel = this.children[0];
-      if (panel.style.display === 'block') {
-        panel.style.setProperty('display', 'none');
-        game.paused = true;
-      } else {
-        panel.style.setProperty('display', 'block', 'important');
-        game.paused = true;
-      }
-    });
-  }
-  request('../assets/pdf/c1.txt', (er, res) => {
+let counter = 0;
+const promises = [];
+function requestChapter(chapter) {
+  console.log(chapter);
+  request(`../assets/pdf/c${chapter}.txt`, (er, res) => {
     // Parsing the text
-
     if (!er) {
-      const body = res.body.split(/\.|\s|:/);
+      const body = res.body.split(/\.|\?|\s|:|A\)B\)C\)D\)E\)/);
       const QUESTION_STATE = 0;
       const ANSWER_STATE_A = 1;
       const ANSWER_STATE_B = 2;
@@ -36,15 +20,22 @@ $(document).ready(() => {
       let question = {};
       let questionNum = 1;
       let state = INITIAL_STATE;
-      console.log(body);
+      let questionsCorrect = 0;
+      // console.log(body);
+      let i;
+      // parsing body
       for (i = 0; i < body.length; i += 1) {
         const token = body[i];
         if (token.includes(`${questionNum})`)) {
           if (state !== INITIAL_STATE) {
+            // Cleaning the answers
+
             question.answer.e = question.answer.e.substr(0, question.answer.e.length - 8);
+            question.answer.correct = question.answer.correct.substr(0, 1);
             if (question.answer.a) {
+              // Excludes t/f
               questions.push(question);
-              console.log(question);
+              // console.log(question);
             }
           }
           question = {
@@ -73,7 +64,6 @@ $(document).ready(() => {
           state = ANSWER_STATE_E;
         } else if (token.substr(1) === 'Explanation') {
           state = CORRECT_ANSWER_STATE;
-          console.log(token);
         }
         switch (state) {
           case QUESTION_STATE:
@@ -98,14 +88,44 @@ $(document).ready(() => {
             question.answer.e += `${token} `;
             break;
           case CORRECT_ANSWER_STATE:
-            question.answer.correct = `${token.substr(0, 1)}`;
+            question.answer.correct += `${token.substr(0, 1)}`;
             break;
           default:
             break;
         }
       }
       // Appending to screen
-      const elem = $('#HRM');
+      // right/wrong function
+      const change = function (e, value, correct) {
+        if (e.prop('checked')) {
+          if (correct.includes(value)) {
+            e.parent().attr('class', 'correct');
+          } else {
+            e.parent().attr('class', 'incorrect');
+          }
+        } else {
+          e.parent().attr('class', 'clean');
+        }
+        questionsCorrect = document.getElementById(panel.id).getElementsByClassName('correct').length;
+        button.innerHTML = `Chapter ${chapter} Questions ${questionsCorrect}/${questions.length}`;
+      };
+      // Trigger all checkboxes
+      const triggerAll = function (a, b, c, d, e) {
+        $(`#${a.id}`).change();
+        $(`#${b.id}`).change();
+        $(`#${c.id}`).change();
+        $(`#${d.id}`).change();
+        $(`#${e.id}`).change();
+      };
+      // Make elements
+      const button = document.createElement('button');
+      button.setAttribute('class', 'accordion');
+      button.innerHTML = `Chapter ${chapter} Questions ${questionsCorrect}/${questions.length}`;
+      const panel = document.createElement('div');
+      panel.setAttribute('class', 'panel survey');
+      panel.id = `HRM${chapter}`;
+      document.getElementById('HRM').appendChild(button);
+      document.getElementById('HRM').appendChild(panel);
       for (i = 0; i < questions.length; i += 1) {
         const q = questions[i];
         const content = document.createElement('div');
@@ -119,10 +139,11 @@ $(document).ready(() => {
         aLabel.setAttribute('for', 'radio');
         aLabel.setAttribute('class', 'pure-checkbox');
         const aCheckbox = document.createElement('input');
-        aCheckbox.id = 'a';
+        aCheckbox.id = `a${chapter}_${i + 1}`;
         aCheckbox.type = 'radio';
         aCheckbox.name = 'radio';
-        aCheckbox.value = 'a';
+        aCheckbox.value = 'A';
+        aCheckbox.checked = false;
         aLabel.appendChild(aCheckbox);
         aLabel.innerHTML += q.answer.a;
 
@@ -130,10 +151,11 @@ $(document).ready(() => {
         bLabel.setAttribute('for', 'radio');
         bLabel.setAttribute('class', 'pure-checkbox');
         const bCheckbox = document.createElement('input');
-        bCheckbox.id = 'b';
+        bCheckbox.id = `b${chapter}_${i + 1}`;
         bCheckbox.type = 'radio';
         bCheckbox.name = 'radio';
-        bCheckbox.value = 'b';
+        bCheckbox.value = 'B';
+        bCheckbox.checked = false;
         bLabel.appendChild(bCheckbox);
         bLabel.innerHTML += q.answer.b;
 
@@ -141,10 +163,11 @@ $(document).ready(() => {
         cLabel.setAttribute('for', 'radio');
         cLabel.setAttribute('class', 'pure-checkbox');
         const cCheckbox = document.createElement('input');
-        cCheckbox.id = 'c';
+        cCheckbox.id = `c${chapter}_${i + 1}`;
         cCheckbox.type = 'radio';
         cCheckbox.name = 'radio';
-        cCheckbox.value = 'c';
+        cCheckbox.value = 'C';
+        cCheckbox.checked = false;
         cLabel.appendChild(cCheckbox);
         cLabel.innerHTML += q.answer.c;
 
@@ -152,10 +175,11 @@ $(document).ready(() => {
         eLabel.setAttribute('for', 'radio');
         eLabel.setAttribute('class', 'pure-checkbox');
         const eCheckbox = document.createElement('input');
-        eCheckbox.id = 'e';
+        eCheckbox.id = `e${chapter}_${i + 1}`;
         eCheckbox.type = 'radio';
         eCheckbox.name = 'radio';
-        eCheckbox.value = 'e';
+        eCheckbox.value = 'E';
+        eCheckbox.checked = false;
         eLabel.appendChild(eCheckbox);
         eLabel.innerHTML += q.answer.e;
 
@@ -163,10 +187,11 @@ $(document).ready(() => {
         dLabel.setAttribute('for', 'radio');
         dLabel.setAttribute('class', 'pure-checkbox');
         const dCheckbox = document.createElement('input');
-        dCheckbox.id = 'd';
+        dCheckbox.id = `d${chapter}_${i + 1}`;
         dCheckbox.type = 'radio';
         dCheckbox.name = 'radio';
-        dCheckbox.value = 'd';
+        dCheckbox.value = 'D';
+        dCheckbox.checked = false;
         dLabel.appendChild(dCheckbox);
         dLabel.innerHTML += q.answer.d;
 
@@ -176,13 +201,88 @@ $(document).ready(() => {
         form.appendChild(dLabel);
         form.appendChild(eLabel);
         content.appendChild(form);
-        elem.append(content);
+        panel.append(content);
+        $(`#${aCheckbox.id}`).change(() => {
+          change($(`#${aCheckbox.id}`), aCheckbox.value, q.answer.correct);
+          $(`#${aCheckbox.id}`).prop('checked', false);
+        });
+        $(`#${bCheckbox.id}`).change(() => {
+          change($(`#${bCheckbox.id}`), bCheckbox.value, q.answer.correct);
+          $(`#${bCheckbox.id}`).prop('checked', false);
+        });
+        $(`#${cCheckbox.id}`).change(() => {
+          change($(`#${cCheckbox.id}`), cCheckbox.value, q.answer.correct);
+          $(`#${cCheckbox.id}`).prop('checked', false);
+        });
+        $(`#${dCheckbox.id}`).change(() => {
+          change($(`#${dCheckbox.id}`), dCheckbox.value, q.answer.correct);
+          $(`#${dCheckbox.id}`).prop('checked', false);
+        });
+        $(`#${eCheckbox.id}`).change(() => {
+          change($(`#${eCheckbox.id}`), eCheckbox.value, q.answer.correct);
+          $(`#${eCheckbox.id}`).prop('checked', false);
+        });
+
+        aLabel.addEventListener('click', () => {
+          $(`#${aCheckbox.id}`).prop('checked', true);
+          triggerAll(aCheckbox, bCheckbox, cCheckbox, dCheckbox, eCheckbox);
+          $(`#${aCheckbox.id}`).prop('checked', true);
+        }, false);
+        bLabel.addEventListener('click', () => {
+          $(`#${bCheckbox.id}`).prop('checked', true);
+          triggerAll(aCheckbox, bCheckbox, cCheckbox, dCheckbox, eCheckbox);
+          $(`#${bCheckbox.id}`).prop('checked', true);
+        }, false);
+        cLabel.addEventListener('click', () => {
+          $(`#${cCheckbox.id}`).prop('checked', true);
+          triggerAll(aCheckbox, bCheckbox, cCheckbox, dCheckbox, eCheckbox);
+          $(`#${cCheckbox.id}`).prop('checked', true);
+        }, false);
+        dLabel.addEventListener('click', () => {
+          $(`#${dCheckbox.id}`).prop('checked', true);
+          triggerAll(aCheckbox, bCheckbox, cCheckbox, dCheckbox, eCheckbox);
+          $(`#${dCheckbox.id}`).prop('checked', true);
+        }, false);
+        eLabel.addEventListener('click', () => {
+          $(`#${eCheckbox.id}`).prop('checked', true);
+          triggerAll(aCheckbox, bCheckbox, cCheckbox, dCheckbox, eCheckbox);
+          $(`#${eCheckbox.id}`).prop('checked', true);
+        }, false);
       }
     } else {
       console.log('There was an error, but at least browser-request loaded and ran!');
       throw er;
     }
+    counter += 1;
+    if (counter === 17) {
+      // Set accordion buttons, shouldnt be in here, but works...
+      let i;
+      const acc = document.getElementsByClassName('accordion');
+      for (i = 0; i < acc.length; i += 1) {
+        console.log(i);
+        acc[i].addEventListener('click', function () {
+          /* Toggle between adding and removing the "active" class,
+              to highlight the button that controls the panel */
+          this.classList.toggle('active');
+          /* Toggle between hiding and showing the active panel */
+          const panel = this.nextSibling;
+          if (panel.style.display === 'block') {
+            panel.style.setProperty('display', 'none');
+            game.paused = true;
+          } else {
+            panel.style.setProperty('display', 'block', 'important');
+            game.paused = true;
+          }
+        });
+      }
+    }
   });
+}
+$(document).ready(() => {
+  for (let chapter = 1; chapter <= 17; chapter += 1) {
+    console.log(chapter);
+    requestChapter(chapter);
+  }
 });
 window.PIXI = require('phaser/build/custom/pixi');
 window.p2 = require('phaser/build/custom/p2');

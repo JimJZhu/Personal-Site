@@ -401,7 +401,24 @@ footer p {
 }
 .content {
   margin: 2rem;
-  padding: auto;
+  padding: 1rem;
+}
+.content .survey {
+  background-color: #fff;
+  padding: 2rem;
+}
+.content .survey .clean {
+  display: block;
+}
+.content .survey .correct {
+  background-color: #008000;
+  color: #fff;
+  display: block;
+}
+.content .survey .incorrect {
+  background-color: #f00;
+  color: #fff;
+  display: block;
 }
 .accordion {
   background-color: #eee;

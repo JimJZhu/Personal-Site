@@ -12,6 +12,7 @@
     "no-mixed-operators": "off",
     "no-use-before-define": "off",
     "prefer-destructuring": "off",
-    "func-names": "off"
+    "func-names": "off",
+    "no-loop-func": "off"
   }
 }
